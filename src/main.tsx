@@ -1,11 +1,26 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom";
+import { styled } from "@stitches/react";
+import { Hexile, Vexile } from "./flexile";
+
+const Box1 = styled("div", {
+  backgroundColor: "#ED6F6F",
+  width: "100px",
+  height: "100px",
+});
+
+const Box2 = styled("div", {
+  backgroundColor: "#6FA9ED",
+  width: "100px",
+  height: "200px",
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Hexile gap={1} padding={1} y="center" x="space">
+      <Box1 />
+      <Box2 />
+    </Hexile>
   </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);

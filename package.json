@@ -1,12 +1,14 @@
 {
   "name": "haechi-flexile",
   "version": "0.0.0",
+  "main": "./flexile.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@stitches/react": "^1.2.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
