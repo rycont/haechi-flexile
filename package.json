@@ -1,11 +1,20 @@
 {
-  "name": "haechi-flexile",
-  "version": "0.0.0",
-  "main": "./dist/index.js",
+  "name": "@haechi/flexile",
+  "version": "0.1.0",
+  "main": "./dist/output.js",
   "source": "./src/flexile.tsx",
+  "types": "./dist/output.d.ts",
   "scripts": {
     "build": "rollup -c"
   },
+  "keywords": [
+    "flex",
+    "layout",
+    "ui",
+    "rycont",
+    "haechi"
+  ],
+  "repository": "https://github.com/rycont/haechi-flexile",
   "dependencies": {},
   "devDependencies": {
     "@rollup/plugin-babel": "^5.3.0",
