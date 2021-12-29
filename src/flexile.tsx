@@ -55,7 +55,6 @@ export const HexileCore = styled("div", {
 export const VexileCore = styled("div", {
   display: "flex",
   flexDirection: "column",
-  gap: "var(--gap)",
   boxSizing: "border-box",
   variants: {
     linebreak: {

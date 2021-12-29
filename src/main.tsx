@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { styled } from "@stitches/react";
-import { Hexile, Vexile } from "./flexile";
+import { Hexile } from "./flexile";
 
 const Box1 = styled("div", {
   backgroundColor: "#ED6F6F",
