@@ -2,6 +2,7 @@ import { styled } from "@stitches/react";
 
 export const HexileCore = styled("div", {
   display: "flex",
+  gap: "var(--gap)",
   boxSizing: "border-box",
   variants: {
     linebreak: {
@@ -47,6 +48,11 @@ export const HexileCore = styled("div", {
     keepsize: {
       true: {
         flexShrink: 0,
+      },
+    },
+    relative: {
+      true: {
+        position: "relative",
       },
     },
   },
@@ -55,6 +61,7 @@ export const HexileCore = styled("div", {
 export const VexileCore = styled("div", {
   display: "flex",
   flexDirection: "column",
+  gap: "var(--gap)",
   boxSizing: "border-box",
   variants: {
     linebreak: {
@@ -73,10 +80,10 @@ export const VexileCore = styled("div", {
       },
     },
     x: {
-      top: {
+      left: {
         alignItems: "flex-start",
       },
-      bottom: {
+      right: {
         alignItems: "flex-end",
       },
       center: {
@@ -84,10 +91,10 @@ export const VexileCore = styled("div", {
       },
     },
     y: {
-      right: {
+      bottom: {
         justifyContent: "flex-end",
       },
-      left: {
+      top: {
         justifyContent: "flex-start",
       },
       center: {
@@ -100,6 +107,11 @@ export const VexileCore = styled("div", {
     keepsize: {
       true: {
         flexShrink: 0,
+      },
+    },
+    relative: {
+      true: {
+        position: "relative",
       },
     },
   },
@@ -114,12 +126,12 @@ interface FlexileProps {
   paddingx?: number;
   paddingy?: number;
   keepsize?: boolean;
-  css?: Record<string, string | number>;
+  relative?: boolean;
 }
 
 interface VexileProps extends FlexileProps {
-  x?: "top" | "bottom" | "center";
-  y?: "right" | "left" | "center" | "space";
+  x?: "right" | "left" | "center";
+  y?: "top" | "bottom" | "center" | "space";
 }
 
 interface HexileProps extends FlexileProps {
@@ -131,7 +143,6 @@ export const Vexile: React.FC<
   VexileProps & React.HTMLAttributes<HTMLDivElement>
 > = (props) => (
   <VexileCore
-    {...props}
     css={{
       ...{
         "--gap": props.gap ? props.gap + "rem" : "0rem",
@@ -146,8 +157,8 @@ export const Vexile: React.FC<
         paddingLeft: props.paddingx + "rem",
         paddingRight: props.paddingx + "rem",
       }),
-      ...props.css,
     }}
+    {...props}
   />
 );
 
