@@ -1,48 +1,53 @@
 import { styled } from "@stitches/react";
 
-export const HexileCore = styled("div", {
-  display: "flex",
-  gap: "var(--gap)",
-  boxSizing: "border-box",
+export const HexileCore = styled('div', {
+  display: 'flex',
+  gap: 'var(--gap)',
+  boxSizing: 'border-box',
   variants: {
+    scrolly: {
+      true: {
+        overflowY: 'auto',
+      },
+    },
     linebreak: {
       true: {
-        flexWrap: "wrap",
+        flexWrap: 'wrap',
       },
     },
     fillx: {
       true: {
-        width: "100%",
+        width: '100%',
       },
     },
     filly: {
       true: {
-        height: "100%",
+        height: '100%',
       },
     },
     x: {
       right: {
-        justifyContent: "flex-end",
+        justifyContent: 'flex-end',
       },
       left: {
-        justifyContent: "flex-start",
+        justifyContent: 'flex-start',
       },
       center: {
-        justifyContent: "center",
+        justifyContent: 'center',
       },
       space: {
-        justifyContent: "space-between",
+        justifyContent: 'space-between',
       },
     },
     y: {
       top: {
-        alignItems: "flex-start",
+        alignItems: 'flex-start',
       },
       bottom: {
-        alignItems: "flex-end",
+        alignItems: 'flex-end',
       },
       center: {
-        alignItems: "center",
+        alignItems: 'center',
       },
     },
     keepsize: {
@@ -52,56 +57,61 @@ export const HexileCore = styled("div", {
     },
     relative: {
       true: {
-        position: "relative",
+        position: 'relative',
       },
     },
   },
-});
+})
 
-export const VexileCore = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  gap: "var(--gap)",
-  boxSizing: "border-box",
+export const VexileCore = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 'var(--gap)',
+  boxSizing: 'border-box',
   variants: {
+    scrolly: {
+      true: {
+        overflowY: 'auto',
+      },
+    },
     linebreak: {
       true: {
-        flexWrap: "wrap",
+        flexWrap: 'wrap',
       },
     },
     filly: {
       true: {
-        height: "100%",
+        height: '100%',
       },
     },
     fillx: {
       true: {
-        width: "100%",
+        width: '100%',
       },
     },
     x: {
       left: {
-        alignItems: "flex-start",
+        alignItems: 'flex-start',
       },
       right: {
-        alignItems: "flex-end",
+        alignItems: 'flex-end',
       },
       center: {
-        alignItems: "center",
+        alignItems: 'center',
       },
     },
     y: {
       bottom: {
-        justifyContent: "flex-end",
+        justifyContent: 'flex-end',
       },
       top: {
-        justifyContent: "flex-start",
+        justifyContent: 'flex-start',
       },
       center: {
-        justifyContent: "center",
+        justifyContent: 'center',
       },
       space: {
-        justifyContent: "space-between",
+        justifyContent: 'space-between',
       },
     },
     keepsize: {
@@ -111,32 +121,33 @@ export const VexileCore = styled("div", {
     },
     relative: {
       true: {
-        position: "relative",
+        position: 'relative',
       },
     },
   },
-});
+})
 
 interface FlexileProps {
-  fillx?: boolean;
-  filly?: boolean;
-  gap?: number;
-  padding?: number;
-  linebreak?: boolean;
-  paddingx?: number;
-  paddingy?: number;
-  keepsize?: boolean;
-  relative?: boolean;
+  fillx?: boolean
+  filly?: boolean
+  gap?: number
+  padding?: number
+  linebreak?: boolean
+  paddingx?: number
+  paddingy?: number
+  keepsize?: boolean
+  relative?: boolean
+  scrolly?: boolean
 }
 
 interface VexileProps extends FlexileProps {
-  x?: "right" | "left" | "center";
-  y?: "top" | "bottom" | "center" | "space";
+  x?: 'right' | 'left' | 'center'
+  y?: 'top' | 'bottom' | 'center' | 'space'
 }
 
 interface HexileProps extends FlexileProps {
-  x?: "right" | "left" | "center" | "space";
-  y?: "top" | "bottom" | "center";
+  x?: 'right' | 'left' | 'center' | 'space'
+  y?: 'top' | 'bottom' | 'center'
 }
 
 export const Vexile: React.FC<
@@ -145,22 +156,22 @@ export const Vexile: React.FC<
   <VexileCore
     css={{
       ...{
-        "--gap": props.gap ? props.gap + "rem" : "0rem",
+        '--gap': props.gap ? props.gap + 'rem' : '0rem',
       },
       ...(props.padding && {
-        padding: props.padding + "rem",
+        padding: props.padding + 'rem',
       }),
       ...(props.gap && {
-        gap: props.gap + "rem",
+        gap: props.gap + 'rem',
       }),
       ...(props.paddingx && {
-        paddingLeft: props.paddingx + "rem",
-        paddingRight: props.paddingx + "rem",
+        paddingLeft: props.paddingx + 'rem',
+        paddingRight: props.paddingx + 'rem',
       }),
     }}
     {...props}
   />
-);
+)
 
 export const Hexile: React.FC<
   HexileProps & React.HTMLAttributes<HTMLDivElement>
@@ -168,19 +179,19 @@ export const Hexile: React.FC<
   <HexileCore
     css={{
       ...{
-        "--gap": props.gap ? props.gap + "rem" : "0rem",
+        '--gap': props.gap ? props.gap + 'rem' : '0rem',
       },
       ...(props.padding && {
-        padding: props.padding + "rem",
+        padding: props.padding + 'rem',
       }),
       ...(props.gap && {
-        gap: props.gap + "rem",
+        gap: props.gap + 'rem',
       }),
       ...(props.paddingx && {
-        paddingLeft: props.paddingx + "rem",
-        paddingRight: props.paddingx + "rem",
+        paddingLeft: props.paddingx + 'rem',
+        paddingRight: props.paddingx + 'rem',
       }),
     }}
     {...props}
   />
-);
+)
