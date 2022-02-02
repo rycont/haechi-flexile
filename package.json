@@ -1,5 +1,5 @@
 {
-  "name": "haechi-flexile",
+  "name": "@haechi/flexile",
   "version": "1.0.0",
   "main": "./dist/output.js",
   "source": "./src/flexile.tsx",
