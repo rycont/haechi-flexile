@@ -1,6 +1,6 @@
 {
   "name": "@haechi/flexile",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "main": "./dist/output.js",
   "source": "./src/flexile.tsx",
   "types": "./dist/output.d.ts",
