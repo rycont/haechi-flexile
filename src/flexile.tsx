@@ -174,6 +174,10 @@ export const Vexile: React.FC<
         paddingLeft: props.paddingx + "rem",
         paddingRight: props.paddingx + "rem",
       }),
+      ...(props.paddingy && {
+        paddingTop: props.paddingy + "rem",
+        paddingBottom: props.paddingy + "rem",
+      }),
     }}
     {...props}
   />
