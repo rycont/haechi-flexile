@@ -70,7 +70,6 @@ export const HexileCore = styled("div", {
 export const VexileCore = styled("div", {
   display: "flex",
   flexDirection: "column",
-  gap: "var(--gap)",
   boxSizing: "border-box",
   variants: {
     scrolly: {
@@ -165,9 +164,6 @@ export const Vexile: React.FC<
 > = (props) => (
   <VexileCore
     css={{
-      ...{
-        "--gap": props.gap ? props.gap + "rem" : "0rem",
-      },
       ...(props.padding && {
         padding: props.padding + "rem",
       }),
