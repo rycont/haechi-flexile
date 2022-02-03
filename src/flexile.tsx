@@ -2,7 +2,6 @@ import { styled } from "@stitches/react";
 
 export const HexileCore = styled("div", {
   display: "flex",
-  gap: "var(--gap)",
   boxSizing: "border-box",
   variants: {
     scrolly: {
@@ -148,7 +147,7 @@ interface FlexileProps {
   keepsize?: boolean;
   relative?: boolean;
   scrolly?: boolean;
-  scrollyx: boolean;
+  scrollx?: boolean;
 }
 
 interface VexileProps extends FlexileProps {
@@ -189,9 +188,6 @@ export const Hexile: React.FC<
 > = (props) => (
   <HexileCore
     css={{
-      ...{
-        "--gap": props.gap ? props.gap + "rem" : "0rem",
-      },
       ...(props.padding && {
         padding: props.padding + "rem",
       }),
