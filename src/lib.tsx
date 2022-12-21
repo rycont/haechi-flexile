@@ -1,6 +1,7 @@
 import { styled } from "@stitches/react";
+import { ComponentProps } from "react";
 
-export const HexileCore = styled("div", {
+const HexileCore = styled("div", {
   display: "flex",
   boxSizing: "border-box",
   variants: {
@@ -67,7 +68,7 @@ export const HexileCore = styled("div", {
   },
 });
 
-export const VexileCore = styled("div", {
+const VexileCore = styled("div", {
   display: "flex",
   flexDirection: "column",
   boxSizing: "border-box",
@@ -147,6 +148,7 @@ interface FlexileProps {
   relative?: boolean;
   scrolly?: boolean;
   scrollx?: boolean;
+  as?: string;
 }
 
 interface VexileProps extends FlexileProps {
@@ -160,7 +162,7 @@ interface HexileProps extends FlexileProps {
 }
 
 export const Vexile: React.FC<
-  VexileProps & React.HTMLAttributes<HTMLDivElement>
+  VexileProps & ComponentProps<typeof VexileCore>
 > = (props) => (
   <VexileCore
     css={{
@@ -184,7 +186,7 @@ export const Vexile: React.FC<
 );
 
 export const Hexile: React.FC<
-  HexileProps & React.HTMLAttributes<HTMLDivElement>
+  HexileProps & ComponentProps<typeof HexileCore>
 > = (props) => (
   <HexileCore
     css={{
